@@ -545,24 +545,30 @@ class _OrderFoodDetailsState extends State<OrderFoodDetails> {
                       ),
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('Platform Chaarges',
-                      style: TextStyle(
-                        color: AppColor().colorPrimary(),
-                        fontWeight: FontWeight.normal,
-                      )),
-                  Text("-₹ " + widget.data.vendorPaymentAdmin.toString(),
-                      style: TextStyle(
-                        color: AppColor().colorPrimary(),
-                        fontWeight: FontWeight.normal,
-                      )
-                    // style: TextStyle(
-                    //     fontSize: 15.0, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
+
+              ///   platform charges
+
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     Text('Platform Chaarges',
+              //         style: TextStyle(
+              //           color: AppColor().colorPrimary(),
+              //           fontWeight: FontWeight.normal,
+              //         )),
+              //     Text("-₹ " + widget.data.vendorPaymentAdmin.toString(),
+              //         style: TextStyle(
+              //           color: AppColor().colorPrimary(),
+              //           fontWeight: FontWeight.normal,
+              //         )
+              //       // style: TextStyle(
+              //       //     fontSize: 15.0, fontWeight: FontWeight.bold),
+              //     ),
+              //   ],
+              // ),
+
+              /// Gst section
+
               // Row(
               //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
               //   children: [
@@ -592,7 +598,7 @@ class _OrderFoodDetailsState extends State<OrderFoodDetails> {
                         color: AppColor().colorPrimary(),
                         fontWeight: FontWeight.normal,
                       )),
-                  Text("₹ " + widget.data.finalVendorTotal!,
+                  Text("₹ " + widget.data.total!,
                       style: TextStyle(
                         color: AppColor().colorPrimary(),
                         fontWeight: FontWeight.normal,

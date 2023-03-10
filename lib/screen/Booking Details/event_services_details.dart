@@ -629,7 +629,7 @@ class _EventServiceDetailsState extends State<EventServiceDetails> {
                         color: AppColor().colorPrimary(),
                         fontWeight: FontWeight.normal,
                       )),
-                  Text("₹ " + widget.data.vendorPayemntAmount.toString(),
+                  Text("₹ " +widget.data.subtotal.toString(),
                       style: TextStyle(
                         color: AppColor().colorPrimary(),
                         fontWeight: FontWeight.normal,
@@ -957,30 +957,31 @@ class _EventServiceDetailsState extends State<EventServiceDetails> {
                                                 )
                                               ],
                                             ),
-                                            Row(
+                                         type == "6" ?   Row(
                                               mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
+                                              MainAxisAlignment
+                                                  .spaceBetween,
                                               children: [
                                                 Text(
-                                                  "Amount",
+                                                  "No. of days",
                                                   style: TextStyle(
                                                       color: AppColor()
                                                           .colorPrimary(),
                                                       fontWeight:
-                                                          FontWeight.normal),
+                                                      FontWeight.normal),
                                                 ),
                                                 Text(
-                                                  "₹ ${widget.data.products![index].specialPrice}",
+                                                  "${widget.data.services![index].noOfDays}",
                                                   // maxLines: 2,
                                                   style: TextStyle(
                                                       color: AppColor()
                                                           .colorPrimary(),
                                                       fontWeight:
-                                                          FontWeight.w600),
+                                                      FontWeight.w600),
                                                 )
                                               ],
-                                            ),
+                                            ) : SizedBox(),
+
                                          type == "6" ? SizedBox.shrink() :  Row(
                                               mainAxisAlignment:
                                               MainAxisAlignment
@@ -988,6 +989,55 @@ class _EventServiceDetailsState extends State<EventServiceDetails> {
                                               children: [
                                                 Text(
                                                  type == "5" ? "No. of helper" : "No. of person",
+                                                  style: TextStyle(
+                                                      color: AppColor()
+                                                          .colorPrimary(),
+                                                      fontWeight:
+                                                      FontWeight.normal),
+                                                ),
+                                                Text(
+                                                type == "5" ?  "${widget.data.services![index].noOfHelper}" : "${widget.data.services![index].noOfPerson}",
+                                                  // maxLines: 2,
+                                                  style: TextStyle(
+                                                      color: AppColor()
+                                                          .colorPrimary(),
+                                                      fontWeight:
+                                                      FontWeight.w600),
+                                                )
+                                              ],
+                                            ),
+                                            type == "5" ?     Row(
+                                              mainAxisAlignment:
+                                              MainAxisAlignment
+                                                  .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  "Helper Price",
+                                                  style: TextStyle(
+                                                      color: AppColor()
+                                                          .colorPrimary(),
+                                                      fontWeight:
+                                                      FontWeight.normal),
+                                                ),
+                                                Text(
+                                                  "₹ ${widget.data.products![index].helperPrice}",
+                                                  // maxLines: 2,
+                                                  style: TextStyle(
+                                                      color: AppColor()
+                                                          .colorPrimary(),
+                                                      fontWeight:
+                                                      FontWeight.w600),
+                                                )
+                                              ],
+                                            ) : SizedBox.shrink(),
+                                           type == "5" ? SizedBox(height: 5,) : SizedBox(),
+                                            type == "5" ? Row(
+                                              mainAxisAlignment:
+                                              MainAxisAlignment
+                                                  .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  "No. of Chef",
                                                   style: TextStyle(
                                                       color: AppColor()
                                                           .colorPrimary(),
@@ -1004,7 +1054,32 @@ class _EventServiceDetailsState extends State<EventServiceDetails> {
                                                       FontWeight.w600),
                                                 )
                                               ],
+                                            ) : SizedBox(),
+                                            Row(
+                                              mainAxisAlignment:
+                                              MainAxisAlignment
+                                                  .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  type == "5" ? "Chef Price" : "Amount",
+                                                  style: TextStyle(
+                                                      color: AppColor()
+                                                          .colorPrimary(),
+                                                      fontWeight:
+                                                      FontWeight.normal),
+                                                ),
+                                                Text(
+                                                  "₹ ${widget.data.products![index].specialPrice}",
+                                                  // maxLines: 2,
+                                                  style: TextStyle(
+                                                      color: AppColor()
+                                                          .colorPrimary(),
+                                                      fontWeight:
+                                                      FontWeight.w600),
+                                                )
+                                              ],
                                             ),
+
                                           ],
                                         ),
                                       ),
